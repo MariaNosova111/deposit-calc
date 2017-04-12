@@ -14,5 +14,5 @@ $(DO): $(DC)
 $(MO): $(MC)
 	$(CC) $(CFLAGS) -c $(MC) -o $(MO)
 clean:
-	rm -rf*.o *.exe
+	rm -rf *.o *.exe
       
