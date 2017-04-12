@@ -14,4 +14,5 @@ $(DO): $(DC)
 $(MO): $(MC)
 	$(CC) $(CFLAGS) -c $(MC) -o $(MO)
 clean:
-	rm ./build/*.o
+	rm -rf*.o *.exe
+      
