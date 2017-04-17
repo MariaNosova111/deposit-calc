@@ -5,6 +5,8 @@ EXECUTABLE = bin/prog
 
 SRC_BUILD_DIR = build/src
 
+SRC_BIN_DIR = bin
+
 $(SRC_BUILD_DIR):
 	mkdir build build/src
    
