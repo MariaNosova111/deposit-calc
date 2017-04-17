@@ -1,18 +1,27 @@
-CC = g++
-CFLAGS = -c -Wall -Werror
-MO = ./build/main.o
-DO = ./build/deposit.o
-MC = ./src/main.c
-DC = ./src/deposit.c
+CC = gcc
+CFLAGS = -Wall -Werror
 
-all: $(DO) $(MO)
-	$(CC) $(MO) $(DO) -o ./bin/deposit-calc
+EXECUTABLE = bin/prog
 
-$(DO): $(DC)
-	$(CC) $(CFLAGS) -c $(DC) -o $(DO)
+SRC_BUILD_DIR = build/src
 
-$(MO): $(MC)
-	$(CC) $(CFLAGS) -c $(MC) -o $(MO)
+$(SRC_BUILD_DIR):
+	mkdir build build/src
+   
+$(SRC_BIN_DIR): 
+	mkdir bin
+all: $(SRC_BUILD_DIR)/main.o $(SRC_BUILD_DIR)/deposit.o
+	$(CC) $(SRC_BUILD_DIR)/main.o $(SRC_BUILD_DIR)/deposit.o -o $(EXECUTABLE)
+
+$(SRC_BUILD_DIR)/main.o: src/main.c
+	$(CC) $(CFLAGS) -c src/main.c -o $(SRC_BUILD_DIR)/main.o
+
+$(SRC_BUILD_DIR)/deposit.o: src/deposit.c
+	$(CC) $(CFLAGS) -c src/deposit.c -o $(SRC_BUILD_DIR)/deposit.o
+
+
+.c.o:
+	$(CC) $(CFLAGS) $< -o $@
+
 clean:
-	rm -rf *.o *.exe
-      
+	rm -rf $(SRC_BUILD_DIR)*.o bin/*
