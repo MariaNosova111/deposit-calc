@@ -7,6 +7,8 @@ SRC_BUILD_DIR = build
 
 SRC_BIN_DIR = bin
 
+.PHONY: clean
+
 	
 all:     $(SRC_BUILD_DIR)/main.o $(SRC_BUILD_DIR)/deposit.o
 	mkdir -p bin
