@@ -24,4 +24,4 @@ $(SRC_BUILD_DIR)/deposit.o: src/deposit.c
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -rf $(SRC_BUILD_DIR)*.o bin/*
+	rm -rf build/* bin/*
