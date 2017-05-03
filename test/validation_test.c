@@ -29,4 +29,12 @@ CTEST(input_tests, amount_more_zero)
     const int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
+CTEST(input_tests, amount_more_zero_fail)
+{
+  
+    const int result = inputCheck(-20, 1000);
 
+    // Then
+    const int expected = 0;
+    ASSERT_EQUAL(expected, result);
+}
